@@ -1,6 +1,5 @@
 from fastapi import FastAPI
-app = FastAPI()
+from app.api.router import router as api_router
+app = FastAPI(title = "Enterprise AI Hub")
 
-@app.get("/")
-def home():
-    return {"message": "Hello, World!"}
+app.include_router(api_router, prefix="/api")
