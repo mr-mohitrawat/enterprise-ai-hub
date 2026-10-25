@@ -7,6 +7,9 @@ class Settings(BaseSettings):
     ollama_model: str = Field(validation_alias="OLLAMA_MODEL")
     ollama_api_base: str = Field(validation_alias="OLLAMA_API_BASE")
     database_url: str
+    jwt_secret_key: str
+    jwt_algorithm: str = "HS256"
+    jwt_expire_minutes: int = 60
 
     model_config = SettingsConfigDict(
         env_file=".env",

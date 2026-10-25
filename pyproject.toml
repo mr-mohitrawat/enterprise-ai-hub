@@ -12,8 +12,11 @@ dependencies = [
     "fastapi>=0.151.0",
     "google-adk[db]>=2.13.0",
     "litellm>=1.106.2",
+    "pwdlib[argon2]>=0.3.1",
     "pydantic-settings>=2.16.1",
+    "pyjwt>=2.15.1",
     "python-dotenv>=1.2.4",
+    "python-multipart>=0.0.32",
     "uvicorn>=0.54.0",
 ]
 

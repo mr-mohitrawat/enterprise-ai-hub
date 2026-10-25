@@ -6,12 +6,9 @@ from google.genai import types
 
 from app.agents.chat_agent.agent import root_agent
 from app.core.config import settings
+from app.services.session_manager import session_service
 APP_NAME = settings.app_name
 
-# These stay alive while the FastAPI process runs.
-session_service = DatabaseSessionService(
-    db_url=settings.database_url,
-)
 runner = Runner(
     agent=root_agent,
     app_name=APP_NAME,
