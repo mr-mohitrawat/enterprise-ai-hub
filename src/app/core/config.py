@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     app_name: str = Field(validation_alias="APP_NAME")
     ollama_model: str = Field(validation_alias="OLLAMA_MODEL")
     ollama_api_base: str = Field(validation_alias="OLLAMA_API_BASE")
+    database_url: str
 
     model_config = SettingsConfigDict(
         env_file=".env",

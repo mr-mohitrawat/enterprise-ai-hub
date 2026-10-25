@@ -1,7 +1,7 @@
 # src/app/agents/runner.py
 import os
 from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
+from google.adk.sessions import DatabaseSessionService
 from google.genai import types
 
 from app.agents.chat_agent.agent import root_agent
@@ -9,7 +9,9 @@ from app.core.config import settings
 APP_NAME = settings.app_name
 
 # These stay alive while the FastAPI process runs.
-session_service = InMemorySessionService()
+session_service = DatabaseSessionService(
+    db_url=settings.database_url,
+)
 runner = Runner(
     agent=root_agent,
     app_name=APP_NAME,
